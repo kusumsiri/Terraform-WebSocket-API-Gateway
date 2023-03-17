@@ -1,7 +1,7 @@
 output "api-id" {
-  value = aws_apigateway2_api.id
+  value = aws_apigatewayv2_api.chat.id
 }
 
-output "api_endpoints" {
-  value = aws_apigateway2_api.api_endpoints
+output "api_endpoint" {
+  value = aws_apigatewayv2_api.chat.api_endpoint
 }
