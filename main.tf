@@ -8,5 +8,6 @@ resource "aws_apigatewayv2_api" "chat" {
 resource "aws_apigatewayv2_stage" "chat" {
   api_id = aws_apigatewayv2_api.chat.id
   name   = "dev"
-  description = "Development stage" 
+  description = "Development stage"
+  auto_deploy = true
 }
