@@ -11,3 +11,8 @@ resource "aws_apigatewayv2_stage" "chat" {
   description = "Development stage"
   auto_deploy = true
 }
+
+resource "aws_apigatewayv2_route" "chat" {
+  api_id = aws_apigatewayv2_api.chat.id
+  route_key = "$default"
+}
