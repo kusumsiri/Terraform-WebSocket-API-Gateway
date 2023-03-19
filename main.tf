@@ -31,4 +31,6 @@ module "lambda_function" {
   tags = {
     Name = "my-lambda1"
   }
+  attach_policy = true
+  policy = "arn:aws:iam::847855290887:policy/lambda-apigateway-policy-Jan21-2023"
 }
