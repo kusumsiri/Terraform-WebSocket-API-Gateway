@@ -41,7 +41,7 @@ module "lambda_function" {
 
 resource "aws_apigatewayv2_integration" "chat" {
   api_id = aws_apigatewayv2_api.chat.id
-  # integration_type = aws.
+  integration_type = "AWS_PROXY"
   description = "integration the $default to lambda"
   integration_uri = module.lambda_function.lambda_function_arn
 }
