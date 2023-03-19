@@ -26,7 +26,7 @@ module "lambda_function" {
   handler       = "index.handler"
   runtime       = "nodejs 18.x"
 
-  source_path = "../src"
+  source_path = "src"
 
   tags = {
     Name = "my-lambda1"
