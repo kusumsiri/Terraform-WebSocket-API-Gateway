@@ -37,5 +37,11 @@ module "lambda_function" {
     "arn:aws:lambda:us-east-1:847855290887:layer:node_module_aws-sdk:2"
   ]
   cloudwatch_logs_retention_in_days = 1
-  # event_source_mapping = 
+}
+
+resource "aws_apigatewayv2_integration" "chat" {
+  api_id = aws_apigatewayv2_api.chat.id
+  integration_type = aws
+  description = "integration the $default to lambda"
+  integration_uri = module.lambda_function.lambda_function_arn
 }
