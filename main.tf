@@ -24,7 +24,7 @@ module "lambda_function" {
   function_name = "my-lambda1"
   description   = "My awesome lambda function"
   handler       = "index.handler"
-  runtime       = "nodejs 18.x"
+  runtime       = "nodejs16.x"
 
   source_path = "src"
 
