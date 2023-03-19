@@ -21,16 +21,19 @@ resource "aws_apigatewayv2_route" "chat" {
 module "lambda_function" {
   source = "terraform-aws-modules/lambda/aws"
 
-  function_name = "my-lambda1"
-  description   = "My awesome lambda function"
+  function_name = "Chat-API-Handler"
+  description   = "Function to handle Chat wensocket api"
   handler       = "index.handler"
-  runtime       = "nodejs16.x"
+  runtime       = "nodejs18.x"
 
   source_path = "src"
 
   tags = {
-    Name = "my-lambda1"
+    Name = "Chat-API-Handler"
   }
   attach_policy = true
   policy = "arn:aws:iam::847855290887:policy/lambda-apigateway-policy-Jan21-2023"
+  layers = [
+    "arn:aws:lambda:us-east-1:847855290887:layer:node_module_aws-sdk:2"
+  ]
 }

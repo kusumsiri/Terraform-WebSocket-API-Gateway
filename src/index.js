@@ -1,4 +1,4 @@
 exports.handler = async function (event) {
    
-  return {"event":JSON.parse(event)}
+  return {"event":JSON.stringify(event)}
 };
