@@ -37,6 +37,7 @@ module "lambda_function" {
     "arn:aws:lambda:us-east-1:847855290887:layer:node_module_aws-sdk:2"
   ]
   cloudwatch_logs_retention_in_days = 1
+
 }
 
 resource "aws_apigatewayv2_integration" "chat" {
